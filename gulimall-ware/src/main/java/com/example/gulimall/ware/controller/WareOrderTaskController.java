@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.gulimall.ware.entity.WareOrderTaskEntity;
 import com.example.gulimall.ware.service.WareOrderTaskService;
-import com.example.common.utils.PageUtils;
-import com.example.common.utils.R;
+import com.example.gulimall.common.utils.PageUtils;
+import com.example.gulimall.common.utils.R;
 
 
 

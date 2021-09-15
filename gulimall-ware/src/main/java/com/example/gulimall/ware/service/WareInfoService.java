@@ -1,7 +1,7 @@
 package com.example.gulimall.ware.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.common.utils.PageUtils;
+import com.example.gulimall.common.utils.PageUtils;
 import com.example.gulimall.ware.entity.WareInfoEntity;
 
 import java.util.Map;

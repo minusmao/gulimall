@@ -4,6 +4,12 @@ spring:
     password: root
     url: jdbc:mysql://192.168.164.129:3306/gulimall_oms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimall-order
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -12,4 +18,4 @@ mybatis-plus:
       id-type: auto    # 设置主键默认自增，则无需在实体类中配置 auto
 
 server:
-  port: 12000
+  port: 22000

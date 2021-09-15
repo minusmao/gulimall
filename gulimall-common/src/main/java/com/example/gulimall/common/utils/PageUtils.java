@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.example.common.utils;
+package com.example.gulimall.common.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 

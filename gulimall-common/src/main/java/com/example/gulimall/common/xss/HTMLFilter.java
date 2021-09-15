@@ -1,4 +1,4 @@
-package com.example.common.xss;
+package com.example.gulimall.common.xss;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

@@ -2,7 +2,9 @@ package com.example.gulimall.member.controller;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Objects;
 
+import com.example.gulimall.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.gulimall.member.entity.MemberEntity;
 import com.example.gulimall.member.service.MemberService;
-import com.example.common.utils.PageUtils;
-import com.example.common.utils.R;
+import com.example.gulimall.common.utils.PageUtils;
+import com.example.gulimall.common.utils.R;
 
 
 
@@ -29,6 +31,24 @@ import com.example.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    /**
+     * 测试 Feign 访问 gulimall-coupon 服务，获取会员的优惠卷列表
+     * @return 会员的优惠卷列表
+     */
+    @RequestMapping("/coupons")
+    public R memberCoupons(){
+        // 会员
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("张三");
+        // 优惠卷
+        R memberCoupons = couponFeignService.memberCoupons();
+
+        return Objects.requireNonNull(R.ok().put("member", memberEntity))
+                .put("coupons", memberCoupons.get("coupons"));
+    }
 
     /**
      * 列表

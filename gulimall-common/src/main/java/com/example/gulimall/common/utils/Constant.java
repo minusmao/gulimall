@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.example.common.utils;
+package com.example.gulimall.common.utils;
 
 /**
  * 常量

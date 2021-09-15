@@ -1,7 +1,7 @@
 package com.example.gulimall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.common.utils.PageUtils;
+import com.example.gulimall.common.utils.PageUtils;
 import com.example.gulimall.product.entity.SpuInfoEntity;
 
 import java.util.Map;
