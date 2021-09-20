@@ -14,3 +14,17 @@ spring:
           uri: https://www.baidu.com
           predicates:
             - Query=url,baidu
+        # 前端所有的 /api/product/** 请求都负载均衡到 gulimall-product 服务
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment}
+        # 前端所有的 /api/** 请求都负载均衡到 renren-fast 服务
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /renren-fast/$\{segment}
